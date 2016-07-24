@@ -3,7 +3,7 @@ POGOProtos
 
 This repository contains the [ProtoBuf](https://github.com/google/protobuf) `.proto` files needed to decode the PokémonGo RPC.
 
-If you want to know which messages are implemented right now, click [here](https://github.com/AeonLucid/POGOProtos/blob/master/pogo/Networking/Requests/RequestType.proto).
+If you want to know which messages are implemented right now, click [here](https://github.com/AeonLucid/POGOProtos/blob/master/src/POGOProtos/Networking/Requests/RequestType.proto).
 
 # Usage
 
@@ -49,6 +49,10 @@ Run `python compile_single.py` to compile everything to a single file.
  - Add the `-o` or `--output` flag to set an output directory, the default is `out`.
  - Add the `-d` or `--desc_file` flag to only generate a descriptor file, `POGOProtos.desc` will be written to the specified output directory.
 
+##### Go
+ - Add the `--go_import_prefix` to prefix all imports in output go files for vendoring all dependencies
+ - Add the `--go_root_package` to specify the root package of the output files as it should be in your `$GOPATH` eg. `github.com/xxx/yyy/pogoprotos`
+
 ### Recursive compilation
 
 Recursive compilation loops through all directories and compiles every `.proto` file it finds to the specified output directory.
@@ -74,3 +78,6 @@ If you don't want to compile POGOProtos but instead use it directly, check out t
 | Language     | Source                                                |
 |--------------|-------------------------------------------------------|
 | NodeJS       | https://github.com/rastapasta/node-pokemongo-protobuf |
+| .NET         | https://github.com/johnduhart/POGOProtos-dotnet       |
+| PHP          | https://github.com/jaspervdm/pogoprotos-php           |
+| Go           | https://github.com/zeeraw/pogo-protos                 |
