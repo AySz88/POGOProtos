@@ -6,11 +6,15 @@ import ntpath
 import sys
 import os
 import shutil
+from distutils import spawn
 from helpers import compile_helper
 from subprocess import call
 
 # Add this to your path
 protoc_path = "protoc"
+if not spawn.find_executable(protoc_path):
+	print("No protoc found? Please ensure it is on your path.")
+	sys.exit(1)
 
 # Specify desired language / output
 parser = argparse.ArgumentParser()
